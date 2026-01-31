@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: tejas-cont 
-          image: tejasgowramma123/starbucks
+          image: tejasgowramma123/zomatoapp
           ports:
             - containerPort: 3000 
 ---
