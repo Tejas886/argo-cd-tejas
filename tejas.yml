@@ -1,0 +1,33 @@
+apiVersion: apps/v1 
+kind: Deployment 
+metadata: 
+  name: tejas-deployment 
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: tejas 
+  template:
+    metadata:
+      labels: 
+        app: tejas 
+    spec:
+      containers:
+        - name: tejas-cont 
+          image: tejasgowramma123/starbucks
+          ports:
+            - containerPort: 3000 
+---
+apiVersion: v1 
+kind: Service 
+metadata:
+  name: tejas-svc 
+spec:
+  type: LoadBalancer
+  selector:
+    app: tejas 
+  ports:
+    - port: 80
+      targetPort: 3000
+      
+
